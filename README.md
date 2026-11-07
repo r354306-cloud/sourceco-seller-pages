@@ -1,10 +1,11 @@
 # SourceCo seller pages, drafts
 
-**Review site: https://r354306-cloud.github.io/sourceco-seller-pages/**
+**Landing pages:** https://r354306-cloud.github.io/sourceco-seller-pages/  
+**Ads:** https://r354306-cloud.github.io/sourceco-seller-pages/ads.html
 
 [![SourceCo seller pages](img/readme-cover.jpg)](https://r354306-cloud.github.io/sourceco-seller-pages/)
 
-Drafts of the HVAC, fleet service and electrical seller pages with Adam’s notes put in, plus the new Meta ads. HVAC and electrical are waiting on an owner story. Fleet has Andy Bender’s.
+Drafts of the HVAC, fleet service and electrical seller pages, plus the Meta ads.
 
 The forms work but don’t send anything, and every page tells search engines to skip it.
 
@@ -25,6 +26,6 @@ Add `?v=wonder`, `?v=terms` or `?v=control` to any draft link to see the other h
 | `kit/` | Webflow paste kit |
 | `logos/` | Approved buyer logo sheets |
 
-The ad photos are Unsplash placeholders with no model releases. Credits are in `ads/PHOTO_CREDITS.txt`.
+Ad photo credits are in `ads/PHOTO_CREDITS.txt`.
 
 Ricky Scheufler

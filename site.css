@@ -133,6 +133,7 @@ figcaption{margin-top:10px;color:var(--muted);font-size:14.5px}
 .reelrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:48px;align-items:center;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
 .reelrow h3{font-size:22px}
 .reelrow .reels{max-width:none}
+.pair.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px}
 @media (max-width:900px){.pair,.reelrow{grid-template-columns:1fr}.facts td:first-child{width:auto}}
 
 /* footer */
