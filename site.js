@@ -8,6 +8,12 @@
     if(e.target.closest('.lb'))close();
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(b){tabs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;
+    var p=document.getElementById(x.getAttribute('aria-controls'));if(p)p.hidden=!on;});}
+  tabs.forEach(function(b,i){b.tabIndex=i?-1:0;b.addEventListener('click',function(){sel(b);});
+    b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!k)return;var n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();});});
+  var h=(location.hash||'').slice(1);var pre=document.getElementById('t-'+h);if(pre)sel(pre);
   var vids=[].slice.call(document.querySelectorAll('video[data-auto]'));
   var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!still&&'IntersectionObserver' in window){
