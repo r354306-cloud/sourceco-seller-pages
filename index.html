@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SourceCo Seller Pages · Drafts for Review</title>
+<meta name="description" content="HVAC, fleet and electrical seller pages and the new Meta ads, built on Adam’s Nov 6 notes. Drafts for review.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="SourceCo seller pages: drafts for review">
+<meta property="og:description" content="HVAC, fleet and electrical pages plus the new ads, built on your Nov 6 notes.">
+<meta property="og:image" content="https://r354306-cloud.github.io/sourceco-seller-pages/img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1D1A17;--cream:#FBFAF7;--alt:#F4EFE6;--card:#FFFEFB;--gold:#CBA14D;--gold-d:#7A5818;
+  --muted:#5F5851;--body:#3E3933;--line:#E7E0D4;--goldbg:#F1E6CC;--on-dark:#D8D0C4;--on-dark-2:#A69D90;
+  --r:14px;--shadow:0 1px 2px rgba(29,26,23,.06),0 10px 30px rgba(29,26,23,.10);
+  --shadow-lg:0 2px 6px rgba(0,0,0,.18),0 30px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--cream);color:var(--body);font:400 17px/1.6 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{color:var(--ink);margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.kicker{font:700 13px/1.2 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.dark .kicker{color:var(--gold)}
+.h2{font-size:clamp(30px,4vw,46px);line-height:1.08;font-weight:750}
+.lede{font-size:19px;line-height:1.6;color:var(--muted);max-width:720px}
+section{padding:96px 0}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:44px}
+.dark{background:var(--ink);color:var(--on-dark)}
+.dark h1,.dark h2,.dark h3{color:#fff}
+.dark .lede{color:var(--on-dark)}
+.alt{background:var(--alt)}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:50;background:rgba(29,26,23,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:650;font-size:16px;white-space:nowrap}
+.brand img{width:26px;height:26px}
+.brand span{color:var(--on-dark-2);font-weight:500}
+.top nav{margin-left:auto;display:flex;gap:4px}
+.top nav a{color:var(--on-dark);text-decoration:none;font-size:14px;font-weight:550;padding:7px 12px;border-radius:999px}
+.top nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.pill{display:inline-flex;align-items:center;gap:6px;font:650 12.5px/1 Inter,sans-serif;padding:7px 11px;border-radius:999px;white-space:nowrap}
+.pill.gold{background:var(--gold);color:var(--ink)}
+.pill.soft{background:var(--goldbg);color:var(--gold-d)}
+.pill.ok{background:#E3EEDF;color:#2F5A27}
+.pill.wait{background:#F6E7C9;color:#7A5818}
+.pill.line{border:1px solid rgba(255,255,255,.2);color:var(--on-dark)}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+
+/* hero */
+.hero{padding:84px 0 110px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto -10% -40% 40%;height:90%;background:radial-gradient(closest-side,rgba(203,161,77,.22),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(38px,5.2vw,62px);line-height:1.04;font-weight:780;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{font-size:19px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:650 15px/1 Inter,sans-serif;padding:14px 18px;border-radius:999px;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--gold);color:var(--ink)}
+.btn.primary:hover{background:#d6ad5a}
+.btn.ghost{border-color:rgba(255,255,255,.22);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.07)}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.outline{border-color:var(--line);background:var(--card);color:var(--ink)}
+.btn svg{width:15px;height:15px}
+.stats{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:22px 18px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.stat b{display:block;color:#fff;font-size:26px;font-weight:750;letter-spacing:-.02em}
+.stat span{font-size:13.5px;color:var(--on-dark-2)}
+.stage{position:relative;aspect-ratio:1/0.86}
+.browser{position:absolute;left:0;top:4%;width:88%;border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow-lg)}
+.chrome{height:30px;background:#ECE7DF;display:flex;align-items:center;gap:6px;padding:0 12px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#D5CEC3}
+.chrome .url{margin-left:10px;flex:1;height:18px;border-radius:6px;background:#fff;font:500 11px/18px Inter,sans-serif;color:#8C8378;padding:0 8px;overflow:hidden;white-space:nowrap}
+.phone{position:absolute;left:-3%;bottom:0;width:26%;border-radius:26px;overflow:hidden;border:7px solid #0E0C0B;background:#0E0C0B;box-shadow:var(--shadow-lg)}
+.adcard{position:absolute;right:0;bottom:2%;width:36%;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg)}
+
+/* jump chips */
+.jump{background:var(--card);border-bottom:1px solid var(--line)}
+.jump .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:14px;padding-bottom:14px;scrollbar-width:none}
+.jump a{flex:0 0 auto;text-decoration:none;font:600 14px/1 Inter,sans-serif;color:var(--muted);padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--cream)}
+.jump a:hover{color:var(--ink);border-color:#d8cdb9}
+
+/* status cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .thumb{aspect-ratio:16/9.4;overflow:hidden;border-bottom:1px solid var(--line);background:#fff}
+.card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.card .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card h3{font-size:22px;font-weight:720}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:15.5px;line-height:1.45}
+.ticks li{position:relative;padding-left:28px}
+.ticks li q{color:var(--ink);font-weight:550}
+.ticks li:before{content:"";position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;background:var(--goldbg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%237A5818' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.ticks li.todo:before{background:#F6E7C9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='2.6' fill='%237A5818'/%3E%3C/svg%3E") center/14px no-repeat}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.links a{font:650 14px/1 Inter,sans-serif;text-decoration:none;padding:11px 14px;border-radius:999px;background:var(--ink);color:#fff}
+.links a.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+/* notes table */
+.notes{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.note{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,1.35fr) 120px;gap:22px;align-items:start;padding:22px 26px;border-top:1px solid var(--line)}
+.note:first-child{border-top:0}
+.note.head{background:var(--alt);padding-top:14px;padding-bottom:14px;font:700 12px/1.2 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.num{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font:700 13px/30px Inter,sans-serif;text-align:center}
+.said{color:var(--ink);font-weight:620;font-size:16.5px;line-height:1.45}
+.landed{font-size:15.5px;line-height:1.55;color:var(--body)}
+.landed b{color:var(--ink);font-weight:650}
+.where{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.tag{font:650 11.5px/1 Inter,sans-serif;padding:6px 8px;border-radius:6px;background:var(--goldbg);color:var(--gold-d);white-space:nowrap}
+
+/* walkthrough */
+.walk{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:48px;align-items:start}
+.scrollframe{border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow);border:1px solid var(--line);position:sticky;top:84px}
+.scrollframe .viewport{height:min(760px,78vh);overflow-y:auto;overscroll-behavior:contain}
+.scrollframe .hint{position:absolute;right:12px;bottom:12px;background:rgba(29,26,23,.82);color:#fff;font:600 12px/1 Inter,sans-serif;padding:8px 10px;border-radius:999px;pointer-events:none}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.steps li{display:grid;grid-template-columns:38px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.steps li:first-child{border-top:0;padding-top:4px}
+.steps .n{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-d);font:700 14px/29px Inter,sans-serif;text-align:center}
+.steps h3{font-size:18.5px;font-weight:700;margin-bottom:5px}
+.steps p{font-size:15.5px;line-height:1.55;color:var(--muted)}
+.steps p q{color:var(--ink);font-weight:550}
+.steps .hl{background:var(--goldbg);border-radius:12px;padding:16px 16px 16px 0;border-top:0;margin:4px 0}
+.steps .hl .n{background:var(--gold);color:var(--ink);border-color:var(--gold);margin-left:14px}
+.steps .hl{grid-template-columns:52px 1fr}
+
+.variants{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.var{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:border-color .15s,transform .15s}
+.var:hover{border-color:#d3c4a6;transform:translateY(-2px)}
+.var code{font:600 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold-d);background:var(--goldbg);padding:5px 7px;border-radius:6px;align-self:flex-start}
+.var b{color:var(--ink);font-size:16px;line-height:1.3;font-weight:680}
+.var span{font-size:13.5px;color:var(--muted);line-height:1.45;margin-top:auto}
+
+.details{display:grid;grid-template-columns:.62fr 1fr 1fr;gap:22px;margin-top:56px;align-items:start}
+figure{margin:0}
+.shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);cursor:zoom-in}
+.shot.phoneshot{border-radius:22px;border:6px solid #0E0C0B;background:#0E0C0B}
+figcaption{font-size:14.5px;line-height:1.5;color:var(--muted);margin-top:12px}
+figcaption b{color:var(--ink);font-weight:650}
+
+/* trade sections */
+.trade{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:start}
+.trade .copy{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px}
+.trade .copy .h2{font-size:clamp(28px,3.4vw,40px)}
+.trade .shots{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.trade .shots .wide{grid-column:1/-1}
+.quote{border-left:3px solid var(--gold);padding:4px 0 4px 16px;color:var(--ink);font-size:17px;line-height:1.5;font-weight:520}
+.quote small{display:block;margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
+.metric{display:flex;align-items:baseline;gap:10px}
+.metric b{font-size:52px;font-weight:780;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.metric span{color:var(--muted);font-size:15px;line-height:1.35}
+
+/* story slot */
+.slot{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:56px;align-items:center}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 26px}
+.field{background:var(--card);border:1px dashed #CDB98F;border-radius:10px;padding:13px 14px}
+.field b{display:block;color:var(--ink);font-size:15px;font-weight:650}
+.field span{font-size:13.5px;color:var(--muted);line-height:1.4}
+.callout{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.callout svg{flex:0 0 22px;color:var(--gold-d);margin-top:2px}
+.callout p{font-size:15.5px;line-height:1.55}
+
+/* ads */
+.ads .sec-head{max-width:820px}
+.concept{margin-top:64px}
+.concept:first-of-type{margin-top:12px}
+.concept-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.concept-head h3{font-size:28px;font-weight:740}
+.concept-head p{color:var(--on-dark-2);font-size:15.5px;margin-top:6px;max-width:620px}
+.land{display:inline-flex;align-items:center;gap:8px;font:600 13.5px/1 Inter,sans-serif;color:var(--on-dark);text-decoration:none;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 14px}
+.land code{font:600 12.5px/1 ui-monospace,Menlo,monospace;color:var(--gold)}
+.land:hover{background:rgba(255,255,255,.06)}
+.adgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ad{border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);cursor:zoom-in;background:#2a2622}
+.adlabel{display:flex;justify-content:space-between;margin-top:10px;font-size:13.5px;color:var(--on-dark-2)}
+.adlabel a{color:var(--on-dark);text-decoration:none;font-weight:600}
+.adlabel a:hover{color:#fff}
+.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;max-width:720px}
+.reel{border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.4);position:relative;aspect-ratio:9/16}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .lbl{position:absolute;left:10px;top:10px;font:650 11.5px/1 Inter,sans-serif;background:rgba(0,0,0,.55);color:#fff;padding:6px 8px;border-radius:999px}
+.reelrow{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:40px}
+.reelrow .reels{margin-top:0}
+.reelcopy h4{color:#fff;font-size:22px;margin:0 0 10px;font-weight:700;letter-spacing:-.01em}
+.reelcopy p{color:var(--on-dark-2);font-size:15.5px}
+.beats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.beat{border-top:2px solid var(--gold);padding-top:8px;font-size:13px;color:var(--on-dark)}
+.beat b{display:block;color:var(--gold);font-size:12px;font-weight:700;margin-bottom:3px}
+.strip{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 18px;scroll-snap-type:x mandatory}
+.strip .st{flex:0 0 200px;scroll-snap-align:start}
+.strip .st img{border-radius:10px;box-shadow:0 14px 30px rgba(0,0,0,.35);cursor:zoom-in}
+.strip .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--on-dark-2)}
+.note-dark{display:flex;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 20px;margin-top:40px}
+.note-dark svg{flex:0 0 20px;color:var(--gold);margin-top:3px}
+.note-dark p{font-size:15px;line-height:1.55;color:var(--on-dark)}
+.older{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+.older img{width:120px;border-radius:8px;opacity:.92;cursor:zoom-in}
+
+/* next */
+.next{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.nx{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.nx .n{width:36px;height:36px;border-radius:10px;background:var(--goldbg);color:var(--gold-d);font:750 16px/36px Inter,sans-serif;text-align:center}
+.nx h3{font-size:18.5px;font-weight:700;line-height:1.3}
+.nx p{font-size:15px;line-height:1.55;color:var(--muted)}
+
+/* files */
+.files{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.file{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .15s}
+.file:hover{border-color:#d3c4a6}
+.file .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--alt);display:grid;place-items:center;color:var(--gold-d)}
+.file .ic svg{width:20px;height:20px}
+.file b{display:block;color:var(--ink);font-size:15.5px;font-weight:650}
+.file span{font-size:13.5px;color:var(--muted)}
+
+footer{background:var(--ink);color:var(--on-dark-2);padding:40px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+footer .brand{font-size:15px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(15,13,12,.9);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:var(--shadow-lg);background:#fff}
+.lb .x{position:absolute;top:16px;right:18px;color:#fff;font:600 14px/1 Inter,sans-serif;background:rgba(255,255,255,.12);padding:10px 12px;border-radius:999px}
+.lb.tall{align-items:flex-start;overflow-y:auto}
+.lb.tall img{max-height:none;max-width:min(1100px,100%)}
+
+@media (max-width:1020px){
+  .hero .wrap,.walk,.trade,.slot,.reelrow{grid-template-columns:1fr}
+  .stage{max-width:640px}
+  .scrollframe{position:relative;top:auto}
+  .trade .copy{position:static}
+  .cards3,.files{grid-template-columns:1fr 1fr}
+  .next,.variants{grid-template-columns:1fr 1fr}
+  .details{grid-template-columns:1fr 1fr}
+  .details figure:first-child{grid-row:span 2}
+  .note{grid-template-columns:36px 1fr;gap:10px 16px}
+  .note .landed,.note .where{grid-column:2}
+  .note .where{justify-content:flex-start}
+  .note.head{display:none}
+  .trade .copy{order:-1}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero{padding:52px 0 70px}
+  .top nav{display:none}
+  .top .pill{margin-left:auto}
+  .cards3,.files,.next,.variants,.adgrid,.details,.fields{grid-template-columns:1fr}
+  .details figure:first-child{grid-row:auto;max-width:300px}
+  .trade .shots{grid-template-columns:1fr}
+  .reels{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .beats{grid-template-columns:1fr 1fr}
+  .note{padding:18px 16px}
+  .btn{padding:13px 16px}
+  .adgrid{max-width:420px}
+  .stats{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px 28px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/mark.png" alt="" width="26" height="26">SourceCo <span>seller pages</span></a>
+    <nav aria-label="Sections">
+      <a href="#notes">Your notes</a>
+      <a href="#hvac">Pages</a>
+      <a href="#story">Owner story</a>
+      <a href="#ads">Ads</a>
+      <a href="#next">Next steps</a>
+    </nav>
+    <span class="pill gold"><span class="dot"></span>Drafts for review</span>
+  </div>
+</header>
+
+<section class="hero dark" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker">For Adam Haile · Updated Nov 6, 2026</div>
+      <h1>Three seller pages and new ads, <em>built on your notes.</em></h1>
+      <p class="lede">Your Nov 6 direction is now the default on HVAC, fleet and electrical. HVAC and electrical are shown before their owner stories, with a marked slot ready for a real deal. Fleet already has Andy Bender’s story. The ads are redone around “Someday.”</p>
+      <div class="btns">
+        <a class="btn primary" href="drafts/lp-hvac-preview.html">Open HVAC draft <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn ghost" href="drafts/lp-electrical-preview.html">Electrical</a>
+        <a class="btn ghost" href="drafts/lp-fleet-service-preview.html">Fleet</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>3</b><span>landing pages</span></div>
+        <div class="stat"><b>3</b><span>thank-you pages</span></div>
+        <div class="stat"><b>18</b><span>new feed and story ads</span></div>
+        <div class="stat"><b>3</b><span>Someday reels</span></div>
+        <div class="stat"><b>40</b><span>approved buyers, logos cleaned</span></div>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="browser">
+        <div class="chrome"><i></i><i></i><i></i><div class="url">sourcecodeals.com/lp-hvac</div></div>
+        <img src="img/hero-hvac.jpg" width="1440" height="900" alt="">
+      </div>
+      <div class="phone"><img src="img/phone-hvac.jpg" width="520" height="1125" alt=""></div>
+      <div class="adcard"><img src="ads/web/hvac-D.jpg" width="864" height="1080" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<div class="jump">
+  <div class="wrap">
+    <a href="#status">Where things stand</a>
+    <a href="#notes">Your notes</a>
+    <a href="#hvac">HVAC</a>
+    <a href="#electrical">Electrical</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#story">Owner story slot</a>
+    <a href="#ads">Ads</a>
+    <a href="#next">Next steps</a>
+    <a href="#files">Files</a>
+  </div>
+</div>
+
+<section id="status">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Where things stand</div>
+      <h2 class="h2">All three are ready to review.</h2>
+      <p class="lede">Every page has your copy, your approved buyers and a thank-you page. Click through the form on any of them. Nothing gets sent.</p>
+    </div>
+    <div class="cards3">
+      <article class="card">
+        <div class="thumb"><img src="img/hero-hvac.jpg" width="1440" height="900" alt="HVAC landing page hero" loading="lazy"></div>
+        <div class="body">
+          <div class="pills"><span class="pill ok"><span class="dot"></span>Ready for review</span><span class="pill wait">Owner story pending</span></div>
+          <h3>HVAC</h3>
+          <ul class="ticks">
+            <li>17 approved buyer logos, Apex, Sila and Redwood up front</li>
+            <li>Residential, commercial and new construction mix in the form and FAQ</li>
+            <li class="todo">Story slot marked and waiting for a real HVAC deal</li>
+          </ul>
+          <div class="links"><a href="drafts/lp-hvac-preview.html">Open draft</a><a class="sec" href="drafts/lp-hvac-thank-you-preview.html">Thank-you page</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="img/hero-electrical.jpg" width="1440" height="900" alt="Electrical landing page hero" loading="lazy"></div>
+        <div class="body">
+          <div class="pills"><span class="pill ok"><span class="dot"></span>Ready for review</span><span class="pill wait">Owner story pending</span></div>
+          <h3>Electrical</h3>
+          <ul class="ticks">
+            <li>14 approved buyer logos, with ArchKey and MKD in the buyer cards</li>
+            <li>Master license question answered in the FAQ</li>
+            <li class="todo">Story slot marked and waiting for a real electrical deal</li>
+          </ul>
+          <div class="links"><a href="drafts/lp-electrical-preview.html">Open draft</a><a class="sec" href="drafts/lp-electrical-thank-you-preview.html">Thank-you page</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="img/hero-fleet.jpg" width="1440" height="900" alt="Fleet service landing page hero" loading="lazy"></div>
+        <div class="body">
+          <div class="pills"><span class="pill ok"><span class="dot"></span>Ready for review</span><span class="pill soft">Story in</span></div>
+          <h3>Fleet service</h3>
+          <ul class="ticks">
+            <li>12 approved buyer logos, from Meridian to Fleetwash</li>
+            <li>Mobile and shop-based fleet work in the form</li>
+            <li>Andy Bender’s story: TNA to Meridian in 84 days</li>
+          </ul>
+          <div class="links"><a href="drafts/lp-fleet-service-preview.html">Open draft</a><a class="sec" href="drafts/lp-fleet-service-thank-you-preview.html">Thank-you page</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="notes" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Your notes</div>
+      <h2 class="h2">Everything you asked for, and where it lives.</h2>
+      <p class="lede">I went line by line through your Nov 6 email. Each point is now the default on all three pages, not a test variant.</p>
+    </div>
+    <div class="notes">
+      <div class="note head"><span></span><span>You said</span><span>On the page</span><span style="text-align:right">Where</span></div>
+      <div class="note"><span class="num">1</span><p class="said">Use the approved buyer logos</p><p class="landed">Logo band and buyer cards on every page, captioned <b>“Companies owned by SourceCo buyers.”</b> HVAC has 17, fleet 12, electrical 14. I pulled and cleaned all of them, so there’s nothing left to send.</p><div class="where"><span class="tag">Logo band</span><span class="tag">Buyer cards</span></div></div>
+      <div class="note"><span class="num">2</span><p class="said">Use Andy Bender’s story for fleet</p><p class="landed">His quote, the Meridian logo and the full deal timeline: <b>first call to close in 84 days.</b></p><div class="where"><span class="tag">Fleet story</span></div></div>
+      <div class="note"><span class="num">3</span><p class="said">“Someday… that day might be today”</p><p class="landed">The hero opens with <b>“Most owners think about selling someday,”</b> the last section is <b>“That day might be today.”</b> and it’s the lead ad and reel.</p><div class="where"><span class="tag">Hero</span><span class="tag">Final CTA</span><span class="tag">Ad D</span></div></div>
+      <div class="note"><span class="num">4</span><p class="said">You built a great company, it deserves a great exit</p><p class="landed">It’s the headline on all three: <b>“You Built a Great HVAC Company. It Deserves a Great Exit.”</b> It also sits under “That day might be today” in the Someday ads.</p><div class="where"><span class="tag">H1</span><span class="tag">Ad D</span></div></div>
+      <div class="note"><span class="num">5</span><p class="said">No obligation, no cost, own pace, they decide, buyers vetted on team, brand and role</p><p class="landed">Hero checkmarks: <b>No cost to you · No obligation · Go at your own pace · You decide what happens next.</b> The sub and step 2 say every buyer is vetted against what you want for your team, your brand and your role.</p><div class="where"><span class="tag">Hero</span><span class="tag">How it works</span></div></div>
+      <div class="note"><span class="num">6</span><p class="said">Lean into curiosity</p><p class="landed"><b>“You’ve wondered what it’s worth, but never looked at your options”</b> is in “This is for you if.” It’s also the Ever wondered ad, with a matching headline at <b>?v=wonder</b>.</p><div class="where"><span class="tag">This is for you if</span><span class="tag">Ad E</span></div></div>
+      <div class="note"><span class="num">7</span><p class="said">The fear of getting lowballed</p><p class="landed"><b>“Will I get lowballed?”</b> is now the first FAQ. The Your terms ad leads with it too, with a matching headline at <b>?v=terms</b>.</p><div class="where"><span class="tag">FAQ #1</span><span class="tag">Ad F</span></div></div>
+      <div class="note"><span class="num">8</span><p class="said">Messy books</p><p class="landed">Step 1 says <b>“No documents, and no clean books needed.”</b> The FAQ asks <b>“My books are a mess. Can I still talk to you?”</b></p><div class="where"><span class="tag">How it works</span><span class="tag">FAQ</span></div></div>
+      <div class="note"><span class="num">9</span><p class="said">Not wanting to work for someone else</p><p class="landed"><b>“Will I end up working for someone else?”</b> sits third in the FAQ, right after pricing.</p><div class="where"><span class="tag">FAQ #3</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="hvac">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">HVAC · shown before the owner story</div>
+      <h2 class="h2">HVAC, top to bottom.</h2>
+      <p class="lede">Scroll the whole page on the left. Electrical is built the same way, so this is the one to read closely.</p>
+    </div>
+    <div class="walk">
+      <div class="scrollframe">
+        <div class="chrome"><i></i><i></i><i></i><div class="url">sourcecodeals.com/lp-hvac</div></div>
+        <div class="viewport" tabindex="0" aria-label="Full HVAC page, scrollable"><img src="img/full-hvac.jpg" width="1080" height="4183" alt="Full HVAC landing page" loading="lazy"></div>
+        <span class="hint">Scroll the page ↓</span>
+      </div>
+      <ol class="steps">
+        <li><span class="n">1</span><div><h3>Hero</h3><p>Your pride line as the headline, “someday” in the sub, and the four promises as checkmarks. The form starts with one easy question: <q>What kind of HVAC work do you do?</q></p></div></li>
+        <li><span class="n">2</span><div><h3>Buyer logos</h3><p>17 approved HVAC buyers in a moving band, with <q>4,000+ vetted buyers</q> and <q>$250M+ closed off-market</q> beside it.</p></div></li>
+        <li><span class="n">3</span><div><h3>How it works</h3><p>Three steps. No documents or clean books. Buyers vetted against your team, your brand and your role. Then <q>Nothing to sign, and you can walk away any time.</q></p></div></li>
+        <li><span class="n">4</span><div><h3>This is for you if</h3><p>Revenue and years in business, plus the two lines from your notes: selling is a someday thing, and you’ve wondered what it’s worth.</p></div></li>
+        <li class="hl"><span class="n">5</span><div><h3>Owner story slot</h3><p>A marked placeholder where a real HVAC deal goes. Andy Bender’s and Andy Emery’s stories sit beside it as tabs. <a href="#story">More on the slot</a></p></div></li>
+        <li><span class="n">6</span><div><h3>Questions owners ask</h3><p>Lowballed first, then pricing, working for someone else, the techs, the name, and messy books.</p></div></li>
+        <li><span class="n">7</span><div><h3>That day might be today.</h3><p>One private conversation about your numbers, and Alia calls within 1 business day. Nothing to sign, nobody finds out, walk away any time.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="details">
+      <figure><img class="shot phoneshot" data-zoom src="img/phone-hvac.jpg" width="520" height="1125" alt="HVAC page on a phone" loading="lazy"><figcaption><b>On a phone.</b> Headline, form and proof all show up before any scrolling.</figcaption></figure>
+      <figure><img class="shot" data-zoom src="img/faqg-hvac.jpg" width="1128" height="968" alt="HVAC FAQ" loading="lazy"><figcaption><b>The FAQ.</b> Your three worries come first. Each answer is about the owner, not about SourceCo.</figcaption></figure>
+      <figure><img class="shot" data-zoom src="img/fin-hvac.jpg" width="1400" height="941" alt="Final call to action" loading="lazy"><figcaption><b>The close.</b> “That day might be today.” with Alia’s face and three no-risk lines.</figcaption></figure>
+    </div>
+
+    <div class="variants">
+      <a class="var" href="drafts/lp-hvac-preview.html"><code>default</code><b>You Built a Great HVAC Company. It Deserves a Great Exit.</b><span>Your direction. Where the Someday ads land.</span></a>
+      <a class="var" href="drafts/lp-hvac-preview.html?v=wonder"><code>?v=wonder</code><b>Ever Wondered What Buyers Would Pay for Your HVAC Company?</b><span>Where the Ever wondered ads land.</span></a>
+      <a class="var" href="drafts/lp-hvac-preview.html?v=terms"><code>?v=terms</code><b>Built a Great HVAC Company? Don’t Settle for a Lowball Offer.</b><span>Where the Your terms ads land.</span></a>
+      <a class="var" href="drafts/lp-hvac-preview.html?v=control"><code>?v=control</code><b>Own an HVAC Company Doing $2M+? See What Buyers Would Pay.</b><span>The old headline, kept as the control for the page test.</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="electrical" class="alt">
+  <div class="wrap trade">
+    <div class="shots">
+      <figure class="wide"><img class="shot" data-zoom src="img/hero-electrical.jpg" width="1440" height="900" alt="Electrical page hero" loading="lazy"></figure>
+      <figure><img class="shot" data-zoom src="img/faqg-electrical.jpg" width="1128" height="968" alt="Electrical FAQ with the license question open" loading="lazy"><figcaption><b>The license question.</b> The one electrical owners ask first.</figcaption></figure>
+      <figure><img class="shot" data-zoom src="img/story-electrical.jpg" width="1128" height="1587" alt="Electrical owner story placeholder" loading="lazy"><figcaption><b>Story slot.</b> Same placeholder as HVAC, ready for an electrical deal.</figcaption></figure>
+    </div>
+    <div class="copy">
+      <div class="kicker">Electrical · shown before the owner story</div>
+      <h2 class="h2">Electrical</h2>
+      <p class="lede" style="font-size:17px">Same build as HVAC, tuned for electrical contractors doing residential, commercial and industrial work.</p>
+      <ul class="ticks">
+        <li>14 approved buyers in the band, from Apex and ArchKey to Pike and Mister Sparky</li>
+        <li>Buyer cards with recent deals: ArchKey bought Diefenderfer and MKD bought Brittain Electric, both in 2025</li>
+        <li>FAQ answers <q>I hold the master license. What happens when I sell?</q> and <q>Will my electricians stay?</q></li>
+        <li class="todo">Owner story slot is waiting for a real electrical deal</li>
+      </ul>
+      <div class="btns" style="margin-top:6px"><a class="btn ink" href="drafts/lp-electrical-preview.html">Open electrical draft</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="fleet">
+  <div class="wrap trade">
+    <div class="shots">
+      <figure class="wide"><img class="shot" data-zoom src="img/hero-fleet.jpg" width="1440" height="900" alt="Fleet service page hero" loading="lazy"></figure>
+      <figure class="wide"><img class="shot" data-zoom src="img/story-fleet.jpg" width="1128" height="1542" alt="Andy Bender's story on the fleet page" loading="lazy" style="max-height:620px;object-fit:cover;object-position:top;width:100%"><figcaption><b>Andy’s story.</b> Quote, buyer and the deal from first call to close.</figcaption></figure>
+    </div>
+    <div class="copy">
+      <div class="kicker">Fleet service · story in</div>
+      <h2 class="h2">Fleet service</h2>
+      <div class="quote">“I’d previously been under LOI with a private equity firm and walked away when it became clear we were just a number.”<small>Andy Bender, Founder, TNA Fleet Services</small></div>
+      <div class="metric"><b>84</b><span>days from first call<br>to close with Meridian</span></div>
+      <ul class="ticks">
+        <li>12 approved buyers, including Meridian, Amerit, Ryder and FleetPride</li>
+        <li>Form covers mobile and shop-based fleet work</li>
+        <li>Buyer cards: mobile maintenance in 11 states, a dedicated fleet buyer with 3,500+ techs, and a truck and trailer buyer with 6 deals since Nov 2025</li>
+      </ul>
+      <div class="btns" style="margin-top:6px"><a class="btn ink" href="drafts/lp-fleet-service-preview.html">Open fleet draft</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="alt">
+  <div class="wrap slot">
+    <figure><img class="shot" data-zoom src="img/story-hvac.jpg" width="1128" height="1587" alt="Owner story placeholder on the HVAC page" loading="lazy"></figure>
+    <div>
+      <div class="kicker">The owner story slot</div>
+      <h2 class="h2" style="margin-top:14px">One real deal per trade finishes HVAC and electrical.</h2>
+      <p class="lede" style="margin-top:16px;font-size:17px">The slot is styled to match Andy’s story, so it drops straight in. Here’s what it needs:</p>
+      <div class="fields">
+        <div class="field"><b>Owner name and title</b><span>Founder, Owner, President</span></div>
+        <div class="field"><b>Company and city</b><span>e.g. Smith Heating, Tulsa, OK</span></div>
+        <div class="field"><b>Buyer and month closed</b><span>Who bought it, and when</span></div>
+        <div class="field"><b>A one or two line quote</b><span>What SourceCo did differently</span></div>
+        <div class="field"><b>What happened to the team</b><span>e.g. every tech kept their job</span></div>
+        <div class="field"><b>A photo</b><span>Optional. Initials fill in without one</span></div>
+      </div>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>The paste kit has a form for this. Fill in the fields and it writes the whole section. No deal yet? Switch the slot off and the page works fine without it, then add the story later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ads" class="dark ads">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The ads, redone</div>
+      <h2 class="h2">Three new concepts, straight from your notes.</h2>
+      <p class="lede">Each ad lands on a page headline that matches it, so the click feels like one conversation. Every concept comes in feed (4:5) and stories (9:16) for all three trades.</p>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head">
+        <div><h3>D · Someday…</h3><p>Your line, on a real owner’s face. “That day might be today,” then the pride line and the four promises.</p></div>
+        <a class="land" href="drafts/lp-hvac-preview.html">Lands on <code>default</code></a>
+      </div>
+      <div class="adgrid">
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-hvac-D-someday-4x5.png" src="ads/web/hvac-D.jpg" width="864" height="1080" alt="Someday ad, HVAC" loading="lazy"><div class="adlabel"><span>HVAC</span><a href="ads/feed/sourceco-hvac-D-someday-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-fleet-D-someday-4x5.png" src="ads/web/fleet-D.jpg" width="864" height="1080" alt="Someday ad, fleet" loading="lazy"><div class="adlabel"><span>Fleet service</span><a href="ads/feed/sourceco-fleet-D-someday-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-electrical-D-someday-4x5.png" src="ads/web/electrical-D.jpg" width="864" height="1080" alt="Someday ad, electrical" loading="lazy"><div class="adlabel"><span>Electrical</span><a href="ads/feed/sourceco-electrical-D-someday-4x5.png">Full size</a></div></figure>
+      </div>
+      <div class="reelrow">
+        <div class="reels">
+          <div class="reel"><span class="lbl">HVAC</span><video data-lazy muted loop playsinline preload="none" poster="video/poster-hvac.jpg" src="video/sourceco-hvac-someday-reel.mp4"></video></div>
+          <div class="reel"><span class="lbl">Fleet</span><video data-lazy muted loop playsinline preload="none" poster="video/poster-fleet.jpg" src="video/sourceco-fleet-someday-reel.mp4"></video></div>
+          <div class="reel"><span class="lbl">Electrical</span><video data-lazy muted loop playsinline preload="none" poster="video/poster-electrical.jpg" src="video/sourceco-electrical-someday-reel.mp4"></video></div>
+        </div>
+        <div class="reelcopy">
+          <h4>Someday reels, 9.5 seconds</h4>
+          <p>Made for Reels and Stories. Every beat reads with the sound off.</p>
+          <div class="beats">
+            <div class="beat"><b>0 to 3s</b>“Someday…”</div>
+            <div class="beat"><b>3 to 5s</b>That day might be today</div>
+            <div class="beat"><b>5 to 7s</b>The pride line</div>
+            <div class="beat"><b>7 to 9s</b>Promises and SourceCo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head">
+        <div><h3>E · Ever wondered</h3><p>The curiosity angle. “Or who’d compete for it? Find out in one private call.”</p></div>
+        <a class="land" href="drafts/lp-hvac-preview.html?v=wonder">Lands on <code>?v=wonder</code></a>
+      </div>
+      <div class="adgrid">
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-hvac-E-wondered-4x5.png" src="ads/web/hvac-E.jpg" width="864" height="1080" alt="Ever wondered ad, HVAC" loading="lazy"><div class="adlabel"><span>HVAC</span><a href="ads/feed/sourceco-hvac-E-wondered-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-fleet-E-wondered-4x5.png" src="ads/web/fleet-E.jpg" width="864" height="1080" alt="Ever wondered ad, fleet" loading="lazy"><div class="adlabel"><span>Fleet service</span><a href="ads/feed/sourceco-fleet-E-wondered-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-electrical-E-wondered-4x5.png" src="ads/web/electrical-E.jpg" width="864" height="1080" alt="Ever wondered ad, electrical" loading="lazy"><div class="adlabel"><span>Electrical</span><a href="ads/feed/sourceco-electrical-E-wondered-4x5.png">Full size</a></div></figure>
+      </div>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head">
+        <div><h3>F · Your terms</h3><p>The lowball fear, answered. No broker fees, serious buyers, and no clean books for the first call.</p></div>
+        <a class="land" href="drafts/lp-hvac-preview.html?v=terms">Lands on <code>?v=terms</code></a>
+      </div>
+      <div class="adgrid">
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-hvac-F-your-terms-4x5.png" src="ads/web/hvac-F.jpg" width="864" height="1080" alt="Your terms ad, HVAC" loading="lazy"><div class="adlabel"><span>HVAC</span><a href="ads/feed/sourceco-hvac-F-your-terms-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-fleet-F-your-terms-4x5.png" src="ads/web/fleet-F.jpg" width="864" height="1080" alt="Your terms ad, fleet" loading="lazy"><div class="adlabel"><span>Fleet service</span><a href="ads/feed/sourceco-fleet-F-your-terms-4x5.png">Full size</a></div></figure>
+        <figure><img class="ad" data-zoom data-full="ads/feed/sourceco-electrical-F-your-terms-4x5.png" src="ads/web/electrical-F.jpg" width="864" height="1080" alt="Your terms ad, electrical" loading="lazy"><div class="adlabel"><span>Electrical</span><a href="ads/feed/sourceco-electrical-F-your-terms-4x5.png">Full size</a></div></figure>
+      </div>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head">
+        <div><h3>Stories and Reels, 9:16</h3><p>All nine, with room left at the top and bottom for Instagram’s buttons. Swipe for more.</p></div>
+      </div>
+      <div class="strip">
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-hvac-D-someday-9x16.png" src="ads/web/hvac-D-story.jpg" width="540" height="960" alt="HVAC Someday story" loading="lazy"><span>HVAC · Someday</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-fleet-D-someday-9x16.png" src="ads/web/fleet-D-story.jpg" width="540" height="960" alt="Fleet Someday story" loading="lazy"><span>Fleet · Someday</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-electrical-D-someday-9x16.png" src="ads/web/electrical-D-story.jpg" width="540" height="960" alt="Electrical Someday story" loading="lazy"><span>Electrical · Someday</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-hvac-E-wondered-9x16.png" src="ads/web/hvac-E-story.jpg" width="540" height="960" alt="HVAC Ever wondered story" loading="lazy"><span>HVAC · Ever wondered</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-fleet-E-wondered-9x16.png" src="ads/web/fleet-E-story.jpg" width="540" height="960" alt="Fleet Ever wondered story" loading="lazy"><span>Fleet · Ever wondered</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-electrical-E-wondered-9x16.png" src="ads/web/electrical-E-story.jpg" width="540" height="960" alt="Electrical Ever wondered story" loading="lazy"><span>Electrical · Ever wondered</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-hvac-F-your-terms-9x16.png" src="ads/web/hvac-F-story.jpg" width="540" height="960" alt="HVAC Your terms story" loading="lazy"><span>HVAC · Your terms</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-fleet-F-your-terms-9x16.png" src="ads/web/fleet-F-story.jpg" width="540" height="960" alt="Fleet Your terms story" loading="lazy"><span>Fleet · Your terms</span></div>
+        <div class="st"><img data-zoom data-full="ads/stories/sourceco-electrical-F-your-terms-9x16.png" src="ads/web/electrical-F-story.jpg" width="540" height="960" alt="Electrical Your terms story" loading="lazy"><span>Electrical · Your terms</span></div>
+      </div>
+    </div>
+
+    <div class="note-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+      <div>
+        <p><b style="color:#fff">The photos are placeholders.</b> They’re free Unsplash images without model releases. Before any paid spend we swap in licensed stock or, better, real SourceCo owners and crews.</p>
+        <p style="margin-top:10px">The first-round concepts (A to C) stay in the set. Ad A runs against <code style="color:var(--gold)">?v=control</code> as the page test.</p>
+        <div class="older">
+          <img data-zoom src="ads/web/hvac-A.jpg" width="540" height="675" alt="Concept A, HVAC" loading="lazy">
+          <img data-zoom src="ads/web/hvac-B.jpg" width="540" height="675" alt="Concept B, HVAC" loading="lazy">
+          <img data-zoom src="ads/web/hvac-C.jpg" width="540" height="675" alt="Concept C, HVAC" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Next steps</div>
+      <h2 class="h2">What I need from you.</h2>
+    </div>
+    <div class="next">
+      <div class="nx"><span class="n">1</span><h3>Your OK on the copy and ads</h3><p>Reply with anything you’d change. Small edits I can turn around the same day.</p></div>
+      <div class="nx"><span class="n">2</span><h3>One HVAC deal and one electrical deal</h3><p>For the story slots. Or we launch with them switched off and add the stories later.</p></div>
+      <div class="nx"><span class="n">3</span><h3>Real photos, if you have them</h3><p>Owners or crews from past deals will beat stock every time, and they clear the release question.</p></div>
+      <div class="nx"><span class="n">4</span><h3>Into Webflow staging</h3><p>Once you’re happy, the paste kit goes into staging with Tomos. Every embed is ready to paste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="files" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Files</div>
+      <h2 class="h2">Everything, ready to use.</h2>
+    </div>
+    <div class="files">
+      <a class="file" href="kit/index.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span><div><b>Webflow paste kit</b><span>Every embed, plus the story form</span></div></a>
+      <a class="file" href="https://github.com/r354306-cloud/sourceco-seller-pages/tree/main/ads/feed"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></span><div><b>Feed ads, 4:5</b><span>9 full-size PNGs, 1080 × 1350</span></div></a>
+      <a class="file" href="https://github.com/r354306-cloud/sourceco-seller-pages/tree/main/ads/stories"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>Stories ads, 9:16</b><span>9 full-size PNGs, 1080 × 1920</span></div></a>
+      <a class="file" href="https://github.com/r354306-cloud/sourceco-seller-pages/tree/main/video"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></span><div><b>Someday reels</b><span>3 MP4s, 1080 × 1920, 9.5s</span></div></a>
+      <a class="file" href="https://github.com/r354306-cloud/sourceco-seller-pages/tree/main/logos"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></span><div><b>Buyer logo sheets</b><span>Approved logos for each trade</span></div></a>
+      <a class="file" href="ads/PHOTO_CREDITS.txt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><div><b>Photo credits</b><span>Where each placeholder came from</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/mark.png" alt="" width="26" height="26">SourceCo <span>seller pages</span></a>
+    <span>Drafts by Ricky for SourceCo. Not live pages: forms don’t submit, and search engines are told to skip them.</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image preview"><span class="x">Close ✕</span><img alt=""></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),li=lb.querySelector('img');
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-zoom]');
+    if(t){e.preventDefault();li.src=t.getAttribute('data-full')||t.currentSrc||t.src;li.alt=t.alt||'';
+      lb.classList.toggle('tall',(t.naturalHeight/t.naturalWidth)>1.9&&!t.getAttribute('data-full'));
+      lb.classList.add('on');document.body.style.overflow='hidden';return;}
+    if(lb.classList.contains('on')&&e.target.closest('#lb')){lb.classList.remove('on');document.body.style.overflow='';li.removeAttribute('src');}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on')){lb.classList.remove('on');document.body.style.overflow='';}});
+  var vids=[].slice.call(document.querySelectorAll('video[data-lazy]'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){var v=en.target;
+      if(en.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:.35});
+    vids.forEach(function(v){io.observe(v);});
+  }else{vids.forEach(function(v){v.setAttribute('autoplay','');v.play();});}
+  var vp=document.querySelector('.scrollframe .viewport'),hint=document.querySelector('.scrollframe .hint');
+  if(vp&&hint)vp.addEventListener('scroll',function(){hint.style.opacity=vp.scrollTop>40?'0':'1';},{passive:true});
+})();
+</script>
+</body>
+</html>
