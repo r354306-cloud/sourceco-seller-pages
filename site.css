@@ -113,7 +113,7 @@ figcaption{margin-top:10px;color:var(--muted);font-size:14.5px}
 .ad .cap a{text-decoration:none}
 .ad .cap a:hover{color:var(--ink)}
 .reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:900px}
-.reels video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:var(--plate);border:1px solid var(--line)}
+.reels video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:var(--plate);border:1px solid var(--line);cursor:pointer}
 .strip{display:flex;gap:20px;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x mandatory}
 .strip figure{flex:0 0 210px;scroll-snap-align:start}
 .strip img{border-radius:6px;cursor:zoom-in}
@@ -166,6 +166,8 @@ figcaption{margin-top:10px;color:var(--muted);font-size:14.5px}
   .notes .r{grid-template-columns:1fr;gap:4px}
   .notes .r.h{display:none}
   .sec,.concept{padding:52px 0}
+  .tabs button{font-size:18px;margin-right:14px;padding-right:0}
+  .tbl td,.tbl th{font-size:14.5px;padding-right:12px}
   .view{height:70vh}
 }
 @media (prefers-reduced-motion:reduce){.tile .plate img{transition:none}}

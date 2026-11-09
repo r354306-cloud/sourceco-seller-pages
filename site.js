@@ -13,8 +13,10 @@
     var p=document.getElementById(x.getAttribute('aria-controls'));if(p)p.hidden=!on;});}
   tabs.forEach(function(b,i){b.tabIndex=i?-1:0;b.addEventListener('click',function(){sel(b);});
     b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!k)return;var n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();});});
-  var h=(location.hash||'').slice(1);var pre=document.getElementById('t-'+h);if(pre)sel(pre);
+  function fromHash(){var pre=document.getElementById('t-'+(location.hash||'').slice(1));if(pre)sel(pre);}
+  fromHash();window.addEventListener('hashchange',fromHash);
   var vids=[].slice.call(document.querySelectorAll('video[data-auto]'));
+  vids.forEach(function(v){v.addEventListener('click',function(){if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});});
   var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!still&&'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){
