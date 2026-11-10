@@ -894,13 +894,13 @@
       doneText: 'A real person reads your application within two business days.',
       next: ['Next: a 15-minute intro call', 'Pick a time now and skip the back and forth.', '[Calendar goes here]'],
       steps: [
-        { q: 'First, do you qualify?', sub: 'These deals are open only to accredited investors. Pick the one that fits you.', tight: true,
-          note: 'Not accredited? We cannot open these deals to you, and we cannot make exceptions.',
-          groups: [{ key: 'acc', opts: ['Yes. I earn $200K+ a year, or $300K with my spouse', 'Yes. My net worth is over $1M, not counting my home', 'Yes. I invest through an entity, trust, or family office', 'I think so, but I am not sure'] }] },
+        { q: 'How much do you have available to invest?', sub: 'Cash or liquid assets you could put into private deals. A rough range is fine.',
+          groups: [{ key: 'liquid', opts: ['Under $100K', '$100K to $500K', '$500K to $2M', '$2M or more'] }] },
         { q: 'What should we send you?', sub: 'So you only hear about deals you would want.', groups: [
             { key: 'check', label: 'How much would you put into one deal?', chips: true, opts: ['$25K to $50K', '$50K to $100K', '$100K to $250K', '$250K or more'] },
             { key: 'interest', label: 'Which businesses interest you? Pick any.', chips: true, multi: true, opts: ['Home services', 'Auto and collision', 'Industrial and manufacturing', 'Healthcare', 'Professional services', 'Anything profitable'] } ] },
-        { q: 'Last step: where can we reach you?', sub: 'A real person reads every application.', fields: [['First name', 'text', 1], ['Last name', 'text', 1], ['Email', 'email'], ['Mobile (optional)', 'tel', 1], ['City and state', 'text', 1], ['A company you run or sold (optional)', 'text'], ['How did you hear about us?', 'select']] }
+        { q: 'Last step: where can we reach you?', sub: 'A real person reads every application.', fields: [['First name', 'text', 1], ['Last name', 'text', 1], ['Email', 'email'], ['Mobile (optional)', 'tel', 1], ['City and state', 'text', 1], ['A company you run or sold (optional)', 'text'], ['How did you hear about us?', 'select']],
+          agree: 'I am an accredited investor.', agreeHelp: 'That generally means $200K+ in yearly income ($300K with a spouse), or $1M+ in net worth not counting your home.' }
       ]
     },
     sponsor: {
@@ -987,6 +987,7 @@
         h += '</label>';
       });
       if (open) h += '</div>';
+      if (s.agree) h += '<label class="agree"><input type="checkbox" data-agree' + (state.a.agree ? ' checked' : '') + '><span>' + esc(s.agree) + ' <span class="help">' + esc(s.agreeHelp || '') + '</span> <span class="tbd">Counsel wording.</span></span></label>';
     }
     h += '<div class="err" id="err"></div>';
     var last = state.step === f.steps.length - 1;
@@ -1001,7 +1002,7 @@
   body.addEventListener('click', function (e) {
     var t = e.target.closest('button'); if (!t) return;
     var f = flows[state.side], s = f.steps[state.step];
-    var keep = function () { body.querySelectorAll('[data-in]').forEach(function (i) { state.a[i.getAttribute('data-in')] = i.value.trim(); }); };
+    var keep = function () { body.querySelectorAll('[data-in]').forEach(function (i) { state.a[i.getAttribute('data-in')] = i.value.trim(); }); var ag = body.querySelector('[data-agree]'); if (ag) state.a.agree = ag.checked; };
     if (t.hasAttribute('data-key')) {
       keep(); var k = t.getAttribute('data-key'), v = t.getAttribute('data-val');
       if (t.hasAttribute('data-multi')) { var arr = state.a[k] || [], ix = arr.indexOf(v); if (ix > -1) arr.splice(ix, 1); else arr.push(v); state.a[k] = arr; }
@@ -1015,6 +1016,7 @@
       if (s.fields) {
         if (!state.a['First name']) err = 'Add your first name.';
         else if (!/^\S+@\S+\.\S+$/.test(state.a['Email'] || '')) err = 'Add a valid email.';
+        else if (s.agree && !state.a.agree) err = 'This is open to accredited investors only.';
       }
       if (err) { document.getElementById('err').textContent = err; return; }
       state.step++; render();
